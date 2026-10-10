@@ -3,10 +3,10 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_chroma import Chroma
 
-# Paste your OpenAI Key here
+# OpenAI Key here
 os.environ["OPENAI_API_KEY"] = "PASTE_YOUR_OPENAI_KEY_HERE"
 
-# Setup OpenAI Brain (GPT-4o-mini is smart and very cheap)
+# Setup OpenAI Brain 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 vectorstore = Chroma(persist_directory="./db", embedding_function=OpenAIEmbeddings())
 retriever = vectorstore.as_retriever()
