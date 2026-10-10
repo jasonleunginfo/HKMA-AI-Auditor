@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 
-# Paste your OpenAI Key here
+# OpenAI Key here
 os.environ["OPENAI_API_KEY"] = "PASTE_YOUR_OPENAI_KEY_HERE"
 
 def ingest_docs():
@@ -13,7 +13,7 @@ def ingest_docs():
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
     chunks = text_splitter.split_documents(data)
     
-    # Using OpenAI Embeddings (Professional Standard)
+    # Using OpenAI Embeddings 
     vectorstore = Chroma.from_documents(
         documents=chunks, 
         embedding=OpenAIEmbeddings(),
